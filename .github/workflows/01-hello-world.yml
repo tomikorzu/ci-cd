@@ -7,9 +7,16 @@ jobs:
     hello:
         runs-on: ubuntu-24.04
         steps: 
-            - name: Saludar
-              run: echo "Hola mundo!"
-            - name: Ver fecha del Runner
+            - name: Say hello
+              run: echo "Hello world!"
+            - name: View runner date
               run: date
-            - name: Ver archivos disponibles
+
+    repo-files:
+        runs-on: ubuntu-24.04
+        steps:
+            - name: Download repo contents
+              uses: actions/checkout@v6
+
+            - name: View repo files
               run: ls -la
